@@ -2,8 +2,9 @@ $$I_{xx} = 2 B t_f \left(\frac{h}{2}\right)^2 + \frac{h^3t_w}{12} = \frac{bt_fh^
 $$I_{yy} = 2\frac{t_fb^3}{3}$$
 $$I_{xy} = 0$$
 $$q_{0\rightarrow 1} = \frac{S_y}{I_{xx}} \int^{s}_{0} t_f \frac{h}{2}ds = -\frac{S_y}{I_{xx}}\frac{t_h}{2}s$$
+
 $$J = \sum \frac{st^3}{3} = 2\frac{b t_f^3}{3}+\frac{ht_w^3}{3}$$
-### Moment equation
+### Shear center
 	Rotation over 0
 
 $$-S_y \xi_s=2\int^{b}_{0} -\frac{S_y}{I_xx}\frac{t_f h}{2}s ds = \frac{2S_y}{I_{xx}}\frac{t_fh}{2}\frac{b^2}{2}$$
@@ -26,3 +27,9 @@ $$M_z = -P\xi_s = \frac{d \theta}{d z}GJ$$
 $$\theta = \frac{-P\xi_s}{GJ}z+F$$
 $$\theta(0) = 0 \rightarrow F = 0$$
 $$\theta(L) = \frac{-P\xi_s L}{GJ}$$
+
+### Shear flow
+$$q_{0\rightarrow 1} = \frac{P}{I_{xx}} \int^{s1}_{0} t_f \frac{h}{2}ds1 = \frac{P}{I_{xx}}\frac{t_h}{2}s$$
+$$q_{1\rightarrow 2} = \frac{P}{I_{xx}} \int^{s}_{0} t_f \frac{h}{2}ds2 = \frac{P}{I_{xx}}(t_w(\frac{h s_{2}}{2} - \frac{s_2^2}{2}) + \frac{t_h b}{2})$$
+
+
