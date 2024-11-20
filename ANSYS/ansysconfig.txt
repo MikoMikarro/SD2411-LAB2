@@ -1,0 +1,144 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Cantilever beam model
+! by Michael and Romain
+! 2024-11-20
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+FINISH ! Finishes the current job
+/CLEAR ! Clears the memory in Ansys
+/PREP7 !Entering pre-processor
+/TITLE,Lab2
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Parameters
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+h=50 !Web height, mm
+b=25 !Flange width, mm
+tw=2.5 !Web thickness, mm
+tf=1.5 !Flange thickness, mm
+X=1 !Concentration factor (x)
+Y=1 !Concentration factor (y)
+L=1000 !Beam length, mm
+S=-100 !Load, N
+number=2 !Number used in meshing
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Material parameters and definitions
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Ea=70000 !Young's modulus for aluminium
+nua=0.3 !Poisson's ratio
+MP,EX,1,Ea !Assigning Ea to EX of material no 1
+MP,NUXY,1,nua !Assigning nua to NUXY of material no 1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Element type
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ET,1,93 !Shell181 shell element
+R,1,tw !Web thickness
+R,2,tf !Flange thickness
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Some numbering
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/PNUM,KP,1 !Keypoint numbering toggle 1=on 2=off
+/PNUM,LINE,1 !Line numbering toggle
+/PNUM,AREA,1 !Area numbering toggle
+/PNUM,NODE,0 !Node numbering toggle
+/PNUM,ELEM,0 !Element numbering toggle
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Geometry
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+K,1,b,0,0 !Keypoint number 1 at (x,y,z)=(b,0,0)
+K,2,0,0,0
+K,3,0,h,0
+K,4,b,h,0
+K,11,b,0,L ! L on this line refers to the defined variable
+K,12,0,0,L ! ”L” the length of the beam.
+K,13,0,h,L
+K,14,b,h,L
+
+L,1,2 !Line between keypoint 1 and 2. L signals here the
+L,2,3 !command ”Line”.
+L,3,4
+L,11,12
+L,12,13
+L,13,14
+L,1,11
+L,2,12
+L,3,13
+L,4,14
+
+AL,8,5,9,2 !Area surrounded by line 8, 5, 9 and 2
+AL,7,1,8,4
+AL,9,6,10,3
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Meshing
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LESIZE,1,,,number !Element division on line 1
+LESIZE,2,,,2*number
+LESIZE,3,,,number
+LESIZE,4,,,number
+LESIZE,5,,,2*number
+LESIZE,6,,,number
+LESIZE,7,,,X*number,Y
+LESIZE,8,,,X*number,Y
+LESIZE,9,,,X*number,Y
+LESIZE,10,,,X*number,Y
+
+TYPE,1 !Selecting element type
+REAL,1 !Selecting web thickness
+MAT,1 !Selecting material
+
+AMESH,1 !Meshing flanges
+
+REAL,2 !Selecting flange thickness
+AMESH,2,3 !Meshing web
+
+EPLO !Plotting elements
+
+FINISH !Finishing pre-processor
+
+/SOLUTION !Starting solution mode
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Boundary conditions
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+NSEL,S,LOC,Z,0 !Selecting nodes at beam end
+D,ALL,ALL !Clamped beam end
+NSEL,ALL !Reselecting all nodes
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Load
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+NSEL,S,LOC,Z,L
+NSEL,R,LOC,X,0
+CP,NEXT,UY,ALL
+NSEL,R,LOC,Y,h/2
+A 1616
+F,ALL,FY,S
+NSEL,ALL
+
+SOLVE !Solving the problem
+FINISH !Finishing solution mode
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Post-processing
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/POST1 !Entering postprocessor
+SET, LAST
+PLNSOL,S,EQV !Plotting von Mises stress
+/VIEW,1,-1,-0.5,3 !Changes the view point
+/ANG,1
+/AUTO,1
+/REPLO
