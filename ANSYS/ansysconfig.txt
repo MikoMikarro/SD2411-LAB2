@@ -1,6 +1,6 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Cantilever beam model
-! by Michael and Romain
+! by Miguel and Romain
 ! 2024-11-20
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -14,15 +14,15 @@ FINISH ! Finishes the current job
 ! Parameters
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-h=50 !Web height, mm
-b=25 !Flange width, mm
-tw=2.5 !Web thickness, mm
-tf=1.5 !Flange thickness, mm
+h=60 !Web height, mm
+b=20 !Flange width, mm
+tw=1.0 !Web thickness, mm
+tf=3.0 !Flange thickness, mm
 X=1 !Concentration factor (x)
 Y=1 !Concentration factor (y)
 L=1000 !Beam length, mm
 S=-100 !Load, N
-number=2 !Number used in meshing
+number=10 !Number used in meshing
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
