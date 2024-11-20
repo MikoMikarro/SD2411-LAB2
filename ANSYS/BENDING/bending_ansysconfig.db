@@ -18,11 +18,11 @@ h=60 !Web height, mm
 b=20 !Flange width, mm
 tw=1.0 !Web thickness, mm
 tf=3.0 !Flange thickness, mm
-X=1 !Concentration factor (x)
-Y=1 !Concentration factor (y)
+X=10 !Element multiplier for the beam
+Y=5 !Concentration factor (y)
 L=1000 !Beam length, mm
 S=-100 !Load, N
-number=10 !Number used in meshing
+number=5 !Number used in meshing
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -47,7 +47,7 @@ R,2,tf !Flange thickness
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Some numbering
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-/PNUM,KP,1 !Keypoint numbering toggle 1=on 2=off
+/PNUM,KP,0 !Keypoint numbering toggle 1=on 0=off
 /PNUM,LINE,1 !Line numbering toggle
 /PNUM,AREA,1 !Area numbering toggle
 /PNUM,NODE,0 !Node numbering toggle
@@ -96,6 +96,17 @@ LESIZE,8,,,X*number,Y
 LESIZE,9,,,X*number,Y
 LESIZE,10,,,X*number,Y
 
+!LESIZE,1,,,number !Element division on line 1
+!LESIZE,2,,,2*number
+!LESIZE,3,,,number
+!LESIZE,4,,,number
+!LESIZE,5,,,2*number
+!LESIZE,6,,,number
+!LESIZE,7,,,X*number,Y
+!LESIZE,8,,,X*number,Y
+!LESIZE,9,,,X*number,Y
+!LESIZE,10,,,X*number,Y
+
 TYPE,1 !Selecting element type
 REAL,1 !Selecting web thickness
 MAT,1 !Selecting material
@@ -142,3 +153,4 @@ PLNSOL,S,EQV !Plotting von Mises stress
 /ANG,1
 /AUTO,1
 /REPLO
+/EOF
