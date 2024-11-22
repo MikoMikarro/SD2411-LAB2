@@ -1,18 +1,18 @@
 1. Complete the following table:
                 Horizontal displ. u(L)      Vertical displ. v(L)    Twist ϕ(L)
-MatLab          
+MatLab          0                           -3.7793                 0.083781
 ANSYS/ABAQUS    0.51032E-006                -4.5552                 -0.88578E-001
-Analytical
+Analytical      0                           -0.0038                  0.0838
 
 2. 
 a) The total strain energy from the commercial FE code is: ____________
 b) The work of the applied load in the commercial FE code is: ____________
-c) The corresponding work in the MatLab code is: ____________
-3. Plot and print the shear stress distributions requested in task 7 in the lab instructions. Add 
+c) The corresponding work in the MatLab code is: 188.9286
+1. Plot and print the shear stress distributions requested in task 7 in the lab instructions. Add 
 your analytically calculated shear stress distribution (τ=q/t) to the plot (by hand if you like) 
 and compare the solutions.
 
-4. Plot and print the warping and normal stress distributions requested in tasks 8 and 9 in the 
+1. Plot and print the warping and normal stress distributions requested in tasks 8 and 9 in the 
 lab instructions. Add your analytical results and compare the solutions.
 The critical buckling load for the beam is estimated. Results are derived analytically, with the 
 commercial FE code and with the MatLab code, which should be modified for this task. For 

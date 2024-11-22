@@ -1,4 +1,4 @@
-function [s,q] = shearflow(P, Ixx, tf, h, tw, b)
+function [] = shearflow(P, Ixx, tf, h, tw, b)
 
 s1 = linspace(0, b, 20);
 s2 = linspace(0, h, 100);

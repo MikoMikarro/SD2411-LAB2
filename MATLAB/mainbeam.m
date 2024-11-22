@@ -33,7 +33,7 @@ m=A*ro;	% mass per unit length of elements [kg/m]
 q=0;           % Distributed load [N/m]
 qt=0;		% Distributed torque [Nm/m]
 S=-100;           % Concentrated load at end of beam [N]
-T=-S*xi_s;		% Beam end torque [Nm]
+T=S*xi_s;		% Beam end torque [Nm]
 P=0;		% Buckling load [N]
 
 % Element input data
@@ -92,7 +92,7 @@ disp(v_L*1000);
 disp("theta Displacement at L [rad]");
 disp(theta_L);
 
-shearflow(-S, I, t_f, h, t_w, b)
+shearflow(-S, I, t_f, h, t_w, b);
 
 figure;
 y = linspace(0,h, 100);
@@ -101,3 +101,7 @@ plot(y, sigma_z_half)
 xlabel("y")
 ylabel("\sigma_z")
 grid("on")
+
+work = 0.5 * S * v_L*1000 + 0.5*T*theta_L;
+disp("work of the applied load at L [N.m]")
+disp(work)
