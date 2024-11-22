@@ -5,9 +5,19 @@ Euler: $P_{cr} = \frac{\pi^2E \min(I_{xx}, I_{yy})}{l^2}$
 Torsionnal: $P_cr = \frac{A}{I_{0s}}(GJ+\frac{\pi^2E\Gamma_R}{L^2})$
 With $I_{0s} = I_{xx} + I_{yy} + A(x_s^2+y_s^2)$
 
-12. Compare the results from your own FE-code and the analytical results.
+Local: 
+- Flange: assumption that loaded edge are simply supported, and one unloaded is free, the other is simply supported: so $K=0.38$
+- Web: all edges are simply supported: $K=3.6$
+Then we got
+$$\sigma_{cr,flange} = 0.38E(\frac{t_f}{b})^2$$
+$$\sigma_{cr,web} = 3.6E(\frac{t_w}{h})^2$$
+Then $P_{cr} = \min(\sigma_{cr,flange},\sigma_{cr,web}) * A$
 
-Need to use $I_{yy}$ instead of $I_{xx}$ for matlab buckling first mode, as we got $I_{yy} < I_{xx}$.
+1.  Compare the results from your own FE-code and the analytical results.
+
+Need to use both $I_{yy}$ and $I_{xx}$ for matlab buckling modes. And find the smallest one a each time. 
+Also problem with our matlab code which compute the torsionnal buckling loads as many times as the number of elements. But I wrote it only one time for each case.
+The value of the torsionnal buckling load is always the same and equal to St Venant buckling load: $P_{Cr,St-Venant} = \frac{AGJ}{I_{0,s}}$. That's why it is different from the analytical formula, which consider also Vlassov rotation.
 
 13. When you continue with Ansys, you can use the same geometric model of the problem. Just  remember to remove the loads used in the bending case before you run the stability analysis. Apply the new load, ensure that it is placed correctly, has the right magnitude and the correct direction. In this problem the SFL command works, check the syntax in the manuals. To simplify things it is practical to apply a unit load (P = 1N). Ansys calculates a load factor (just as your Matlab FE-code) that is a multiplier of the applied load. It may be good to check that the load is applied correctly by running the problem statically, without the  buckling options, and check the total reaction load, which then should be 1N.
 

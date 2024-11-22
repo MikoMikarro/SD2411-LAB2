@@ -6,4 +6,5 @@ A = 2*(b*tf + h/2*tw);
 
 
 pcr = A/I0*(G*J+pi^2*E*gamma/4/L^2);
-
+disp("st venant")
+disp( A/I0*(G*J))

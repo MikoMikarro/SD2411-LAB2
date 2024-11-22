@@ -25,7 +25,7 @@ xs = xc+xi_s;
 
 Iyy = t_w*h*xc^2 + t_f*b^3/6 + 2*t_f*b*(b/2-xc)^2;     % Moment of inertia about y-axis [m4]
 J=2*b*t_f^3 / 3 + h*t_w^3 / 3;		% Torsional constant [m4]
-EI=E*I;		% Bending stiffness [Nm2]
+EI=E*Iyy;		% Bending stiffness [Nm2]
 GJ=G*J;		% Torsional stiffness [Nm2]
 A=2*b*t_f + h*t_w;	% Cross-section area [m2]
 I0 = I+Iyy+A*xs^2;	% Polar moment of inertia [m4]
@@ -41,7 +41,7 @@ T=0; %S*xi_s*0;		% Beam end torque [Nm]
 P=-1;		% Buckling load [N]
 
 % Element input data
-nelem=100;		% number of elements
+nelem=30;		% number of elements
 le=L/nelem;		% length of elements for even distribution
 ndof=3*(nelem+1);	% number of degrees of freedom
 nnode=nelem+1;		% number of nodes
@@ -135,3 +135,5 @@ disp("Euler")
 disp(pcr)
 disp("Torsionnal")
 disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
+
+local_buckling(h,b,t_f,t_w,E,A)
