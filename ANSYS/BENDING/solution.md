@@ -111,8 +111,34 @@ Repeat this for nodes at z = L, just remember to delete previous paths
 Plot results on the media files
 
 # 8
-NOT ANSYS
+
+Select -> Entities -> Nodes -> By Location -> Z coordinates -> Min,Max = 999, 1001 -> Apply -> Plot
+
+General Postproc -> Path Operations -> Define Path
+Click on the corner nodes in order and create path
+
+General Postproc -> Path Operations -> Map onto Path -> DOF Solution -> Z displacement
+General Postproc -> Path Operations -> Plot Path item On Graph
+
 # 9
-NOT ANSYS
+```
+NSEL,S,LOC,X,0
+NSEL,R,LOC,Y,h
+```
+
+General Postproc -> Path Operations -> Define Path
+Click on the beginning and end nodes.
+
+General Postproc -> Path Operations -> Map onto Path -> DOF Solution -> Z displacement
+General Postproc -> Path Operations -> Plot Path item On Graph -> Add (UZ)
+General Postproc -> Path Operations -> Map onto Path -> Stress solution -> SX
+General Postproc -> Path Operations -> Map onto Path -> Stress solution -> SY
+General Postproc -> Path Operations -> Map onto Path -> Stress solution -> SZ
+General Postproc -> Path Operations -> Plot Path item On Graph -> Add (SX, SY, SZ)
+
+As the bending increases, components from the SZ go to SY.
+
+Warping is not correctly computed as the twist from the shape is constricted as the UY is not freed from all the points the points on the wedge.
 # 10
-NOT ANSYS
+
+First we need to point the first difference. The matlab/analyitical doesn't actually model the twist as it happens from a applied load, it comes from an applied torque. The other difference are the boundary conditions for the applied force. The analyitical/matlab one doesn't actually consider the real shape of the section and doesn't consider the change in shape of the section as the deformation happens.
