@@ -22,6 +22,18 @@ List -> Results -> Nodal Solution -> DOF Solution -> Rotation Vector Sum
 NODE       ROTX             ROTY            ROTZ           RSUM  
 112         0.67050E-002    0.72555E-009    -0.88578E-001  0.88832E-001
 
+## To get the rotation we need to apply trigonomagic
+We'll get the values for the displacement from the middle of the beam and the top left corner to get how much it twisted.
+Node in the middle:
+     NODE       UX           UY           UZ           USUM  
+     112        0.51105E-006 -4.5552      0.49838E-008 4.5552 
+Node in the top left corner:
+    NODE        UX           UY           UZ           USUM  
+     102        2.5156      -4.5552       0.20262      5.2076 
+
+distance between them = h/2 = 30 mm
+twist angle = atan(ux/h) = -0.083657623413
+
 # 6
 On the main menu (left panel)
 General Postproc -> Element Table -> Define Table -> Add -> Energy ->Strain enrg SENE-> OK -> Close

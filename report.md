@@ -1,11 +1,11 @@
 1. Complete the following table:
                 Horizontal displ. u(L)      Vertical displ. v(L)    Twist ϕ(L)
-MatLab          0                           -3.7793                 0.083781
-ANSYS/ABAQUS    0.51032E-006                -4.5552                 -0.88578E-001
-Analytical      0                           -0.0038                  0.0838
+MatLab          0                           -3.7793                 -0.0838
+ANSYS/ABAQUS    0.51032E-006                -4.5552                 -0.0837
+Analytical      0                           -0.0038                 -0.0838
 
 2. 
-a) The total strain energy from the commercial FE code is: ____________
+a) The total strain energy from the commercial FE code is: 227.511
 b) The work of the applied load in the commercial FE code is: ____________
 c) The corresponding work in the MatLab code is: 188.9286
 1. Plot and print the shear stress distributions requested in task 7 in the lab instructions. Add 
