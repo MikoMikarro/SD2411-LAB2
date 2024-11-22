@@ -32,7 +32,7 @@ J0=I0*ro;	% Mass moment of inertia [kgm]
 m=A*ro;	% mass per unit length of elements [kg/m]
 q=0;           % Distributed load [N/m]
 qt=0;		% Distributed torque [Nm/m]
-S=-100;           % Concentrated load at end of beam [N]
+S=100;           % Concentrated load at end of beam [N]
 T=S*xi_s;		% Beam end torque [Nm]
 P=0;		% Buckling load [N]
 
@@ -105,3 +105,11 @@ grid("on")
 work = 0.5 * S * v_L*1000 + 0.5*T*theta_L;
 disp("work of the applied load at L [N.m]")
 disp(work)
+
+warping(xi_s, T, G, J, h, b)
+
+L = 0.5;
+pcr = pi^2*E*min(I,Iyy)/L;
+disp("Pcr1")
+disp(pcr)
+
