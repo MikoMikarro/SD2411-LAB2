@@ -142,5 +142,3 @@ Warping is not correctly computed as the twist from the shape is constricted as 
 # 10
 
 First we need to point the first difference. The matlab/analyitical doesn't actually model the twist as it happens from a applied load, it comes from an applied torque. The other difference are the boundary conditions for the applied force. The analyitical/matlab one doesn't actually consider the real shape of the section and doesn't consider the change in shape of the section as the deformation happens.
-
-$$latex$$
