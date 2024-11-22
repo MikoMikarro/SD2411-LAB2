@@ -10,6 +10,13 @@ In this way the total applied load is equal to P. Define P (e.g. P = 1) at the t
 
 14. Apply the necessary boundary conditions. 
 
+```
+NSEL,S,LOC,Z,L !Selecting nodes at beam end
+CP,NEXT,UY,ALL
+CP,NEXT,UX,ALL
+NSEL,ALL !Reselecting all nodes
+```
+
 15. To include eigenvalue buckling in the analysis you need to add the following to your input file (file).
 
 Note that N should be a number, e.g. 5. You should preferably use the same value for N in 
