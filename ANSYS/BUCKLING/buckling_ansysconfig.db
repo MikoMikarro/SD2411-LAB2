@@ -20,10 +20,11 @@ tw=1.0 		!Web thickness, 	mm
 tf=3.0 		!Flange thickness, 	mm
 X=10 		!Element multiplier for the beam
 Y=1 		!Concentration factor (y)
-L=1000 		!Beam length, 		mm
+L=500 		!Beam length, 		mm
 S=-100 		!Load, 				N
 P=1   		!Buclking load
-number=10 	!Number used in meshing
+number=5 	!Number used in meshing
+X=L/b 		!Element multiplier for the beam
 N = 5		! Number of buckling modes
 
 
@@ -120,10 +121,10 @@ NSEL,S,LOC,Z,0 !Selecting nodes at beam end
 D,ALL,ALL !Clamped beam end
 NSEL,ALL !Reselecting all nodes
 
-NSEL,S,LOC,Z,L !Selecting nodes at beam end
-CP,NEXT,UY,ALL
-CP,NEXT,UX,ALL
-NSEL,ALL !Reselecting all nodes
+!NSEL,S,LOC,Z,L !Selecting nodes at beam end
+!CP,NEXT,UY,ALL
+!CP,NEXT,UX,ALL
+!NSEL,ALL !Reselecting all nodes
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -157,8 +158,8 @@ FINISH ! Finish the calculation
 ! Post-processing
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /POST1 !Entering postprocessor
-SET, LAST
-PLNSOL,S,EQV !Plotting von Mises stress
+SET, FIRST ! Activate the first mode
+PLDISP, 2 ! Plots this mode together with the undeformed beam shap
 /VIEW,1,-1,-0.5,3 !Changes the view point
 /ANG,1
 /AUTO,1
