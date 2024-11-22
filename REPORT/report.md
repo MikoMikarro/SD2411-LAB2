@@ -36,18 +36,18 @@ Complete the following table:
 |-|-|-|-|
 |**Analytical** |____________|_____________|_____________| 
 |Euler (E)      | | | |
-|Torsion (T)| | | |
-|Local (L)| | | |
-|Combined (C)| | | |
+|Torsion (T)    | | | |
+|Local (L)      | | | |
+|Combined (C)   | | | |
 |**FEM**        |____________|_____________|_____________|
-|Pcr1 (mode)| | | | 
-|Pcr2 (mode)| | | | 
-|Pcr3 (mode)| | | | 
-|Pcr4 (mode)| | | | 
-|Pcr5 (mode)| | | | 
+|Pcr1 (mode)    | | | | 
+|Pcr2 (mode)    | | | | 
+|Pcr3 (mode)    | | | | 
+|Pcr4 (mode)    | | | | 
+|Pcr5 (mode)    | | | | 
 |**MatLab**     |____________|_____________|_____________|
-|Pcr1 (mode)| | | | 
-|Pcr2 (mode)| | | | 
-|Pcr3 (mode)| | | | 
-|Pcr4 (mode)| | | | 
-|Pcr5 (mode)| | | | 
+|Pcr1 (mode)    | | | | 
+|Pcr2 (mode)    | | | | 
+|Pcr3 (mode)    | | | | 
+|Pcr4 (mode)    | | | | 
+|Pcr5 (mode)    | | | | 
