@@ -1,3 +1,5 @@
+# Bending
+
 1. Complete the following table:
                 Horizontal displ. u(L)      Vertical displ. v(L)    Twist ϕ(L)
 MatLab          0                           -3.7793                 -0.0838
@@ -22,6 +24,8 @@ Everything on the solution folder 3
 lab instructions. Add your analytical results and compare the solutions.
 
 Everything on the solution folder 4
+
+# Buckling
 
 The critical buckling load for the beam is estimated. Results are derived analytically, with the 
 commercial FE code and with the MatLab code, which should be modified for this task. For 
