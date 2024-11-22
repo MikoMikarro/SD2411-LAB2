@@ -91,3 +91,13 @@ disp("v Displacement at L [mm]");
 disp(v_L*1000);
 disp("theta Displacement at L [rad]");
 disp(theta_L);
+
+shearflow(-S, I, t_f, h, t_w, b)
+
+figure;
+y = linspace(0,h, 100);
+sigma_z_half = -S*L/(2*I)*y;
+plot(y, sigma_z_half)
+xlabel("y")
+ylabel("\sigma_z")
+grid("on")

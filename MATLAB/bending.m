@@ -54,5 +54,6 @@ plot(node_z, fi_n, 'DisplayName','twist');
 xlabel("x")
 ylabel("bending (normalized)")
 legend()
+grid("on")
 title("Bending")
 hold off;
