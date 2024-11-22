@@ -16,8 +16,16 @@ W = 1/2 * d * F + 1/2 * ϕ * T
 your analytically calculated shear stress distribution (τ=q/t) to the plot (by hand if you like) 
 and compare the solutions.
 
+Everything on the solution folder
+
+
 4. Plot and print the warping and normal stress distributions requested in tasks 8 and 9 in the 
 lab instructions. Add your analytical results and compare the solutions.
+
+
+
+
+
 The critical buckling load for the beam is estimated. Results are derived analytically, with the 
 commercial FE code and with the MatLab code, which should be modified for this task. For 
 the FE results, examine (at least) the 5 first critical buckling loads and try to distinguish which 
