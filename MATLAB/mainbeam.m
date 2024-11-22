@@ -119,7 +119,7 @@ disp("Euler:")
 disp(pcr)
 disp("Torsionnal")
 disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
-disp("combined")
+disp("Combined")
 combined_buckling(E, I, Iyy, I0, GJ,L ,b, h, t_f, t_w, xi_s, A, xs)
 
 L = 1;
@@ -129,7 +129,7 @@ disp("Euler:")
 disp(pcr)
 disp("Torsionnal")
 disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
-disp("combined")
+disp("Combined")
 combined_buckling(E, I, Iyy, I0, GJ,L ,b, h, t_f, t_w, xi_s, A, xs)
 
 L = 2;
@@ -139,7 +139,7 @@ disp("Euler")
 disp(pcr)
 disp("Torsionnal")
 disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
-disp("combined buckling")
+disp("Combined buckling")
 combined_buckling(E, I, Iyy, I0, GJ,L ,b, h, t_f, t_w, xi_s, A, xs)
 
 
