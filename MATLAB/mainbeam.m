@@ -109,7 +109,25 @@ disp(work)
 warping(xi_s, T, G, J, h, b)
 
 L = 0.5;
-pcr = pi^2*E*min(I,Iyy)/L;
-disp("Pcr1")
+pcr = pi^2*E*min(I,Iyy)/L^2;
+disp("L = 500mm")
+disp("Euler:")
 disp(pcr)
+disp("Torsionnal")
+disp(torsion_buckling(I, Iyy, G,J,E,L ,b, h, t_f, t_w, xi_s))
 
+L = 1;
+pcr = pi^2*E*min(I,Iyy)/L^2;
+disp("L=1000mm")
+disp("Euler:")
+disp(pcr)
+disp("Torsionnal")
+disp(torsion_buckling(I, Iyy, G,J,E,L ,b, h, t_f, t_w, xi_s))
+
+L = 2;
+pcr = pi^2*E*min(I,Iyy)/L^2;
+disp("L=2000mm")
+disp("Euler")
+disp(pcr)
+disp("Torsionnal")
+disp(torsion_buckling(I, Iyy, G,J,E,L ,b, h, t_f, t_w, xi_s))

@@ -1,5 +1,7 @@
 11. Calculate the buckling load for the column analytically. Remember that there are three  potential buckling modes to consider; Euler buckling, local buckling and torsion buckling.  For some cross sections combined Euler/torsion buckling could also occur.
 
+Euler: $P_{cr} = \frac{\pi^2E \min(I_{xx}, I_{yy})}{l^2}$
+
 12. Compare the results from your own FE-code and the analytical results.
 
 13. When you continue with Ansys, you can use the same geometric model of the problem. Just  remember to remove the loads used in the bending case before you run the stability analysis. Apply the new load, ensure that it is placed correctly, has the right magnitude and the correct direction. In this problem the SFL command works, check the syntax in the manuals. To simplify things it is practical to apply a unit load (P = 1N). Ansys calculates a load factor (just as your Matlab FE-code) that is a multiplier of the applied load. It may be good to check that the load is applied correctly by running the problem statically, without the  buckling options, and check the total reaction load, which then should be 1N.
