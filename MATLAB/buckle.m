@@ -66,3 +66,5 @@ title("Loads factor for buckling")
 ylabel("loads factor")
 xlabel("buckling mode")
 grid on
+
+disp(load(1:5))

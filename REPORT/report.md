@@ -2,11 +2,11 @@
 
 1. Complete the following table:
 
-|Tool           | Horizontal displ. $u(L)$ | Vertical displ. $v(L)$ |Twist $\phi(L)$|
-|---------------|--------------------------|------------------------|---------------|
-|MatLab         | 0                        |-3.7793                 |-0.0838        |
-|ANSYS/ABAQUS   | 0.51032E-006             |-4.5552                 |-0.0837        |
-|Analytical     | 0                        |-3.7793                 |-0.0838        |
+| Tool         | Horizontal displ. $u(L)$ | Vertical displ. $v(L)$ | Twist $\phi(L)$ |
+| ------------ | ------------------------ | ---------------------- | --------------- |
+| MatLab       | 0                        | -3.7793                | -0.0838         |
+| ANSYS/ABAQUS | 0.51032E-006             | -4.5552                | -0.0837         |
+| Analytical   | 0                        | -3.7793                | -0.0838         |
 
 2. Give results for the following codes
 - The total strain energy from the commercial FE code is: `227.51`
@@ -32,22 +32,22 @@ buckling modes they represent.
 Complete the following table:
 
 
-|Pcr [N]        | L = 500 mm | L = 1000 mm | L = 2000 mm |
-|---------------|------------|-------------|-------------|
-|**Analytical** |            |             |             | 
-|Euler (E)      | | | |
-|Torsion (T)    | | | |
-|Local (L)      | | | |
-|Combined (C)   | | | |
-|**FEM**        |            |             |             |
-|Pcr1 (mode)    | 5404.9552  | 1379.7069   | 345.63093   | 
-|Pcr2 (mode)    | 10470.816  | 7980.2467   | 3096.3322   | 
-|Pcr3 (mode)    | 11900.177  | 10932.967   | 4449.5996   | 
-|Pcr4 (mode)    | 21572.674  | 13097.126   | 8459.6366   | 
-|Pcr5 (mode)    | 21590.254  | 15946.047   | 9918.8257   | 
-|**MatLab**     |            |             |             |
-|Pcr1 (mode)    | | | | 
-|Pcr2 (mode)    | | | | 
-|Pcr3 (mode)    | | | | 
-|Pcr4 (mode)    | | | | 
-|Pcr5 (mode)    | | | | 
+| Pcr [N]        | L = 500 mm | L = 1000 mm | L = 2000 mm |
+| -------------- | ---------- | ----------- | ----------- |
+| **Analytical** |            |             |             |
+| Euler (E)      | 5527.0     | 1381.7      | 345.4362    |
+| Torsion (T)    | 14113      | 11385       | 10703       |
+| Local (L)      |            |             |             |
+| Combined (C)   |            |             |             |
+| **FEM**        |            |             |             |
+| Pcr1 (mode)    | 5404.9552  | 1379.7069   | 345.63093   |
+| Pcr2 (mode)    | 10470.816  | 7980.2467   | 3096.3322   |
+| Pcr3 (mode)    | 11900.177  | 10932.967   | 4449.5996   |
+| Pcr4 (mode)    | 21572.674  | 13097.126   | 8459.6366   |
+| Pcr5 (mode)    | 21590.254  | 15946.047   | 9918.8257   |
+| **MatLab**     |            |             |             |
+| Pcr1 (mode)    |            | 1381.744    |             |
+| Pcr2 (mode)    |            | 10475.433   |             |
+| Pcr3 (mode)    |            |             |             |
+| Pcr4 (mode)    |            |             |             |
+| Pcr5 (mode)    |            |             |             |

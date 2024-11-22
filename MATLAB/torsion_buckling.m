@@ -1,12 +1,9 @@
-function pcr = torsion_buckling(Ixx, Iyy, G,J,E,L ,b, h, tf, tw, xi)
-xc = tf*b^2/(tw*h+tf*b*2);
-xs = xc+xi;
+function pcr = torsion_buckling(I0, G,J,E,L ,b, h, tf, tw, xi)
+% xc = tf*b^2/(tw*h+tf*b*2);
 
-gamma = 2 * (tw^4*xi^4/16*(h/2)^5/5 +...
-    h^4*tf^4/256*((-b)^5/5))
+gamma = tw*xi^2*h^3/12 + tf*h^2/2*(xi^2*b-xi*b^2+b^3/3);
+A = 2*(b*tf + h/2*tw);
 
-A = 2*(b*tf + h*tw);
-I0 = Ixx+Iyy+A*xs^2;
 
-pcr = A/I0*(G*J+pi^2*E*gamma/L^2)
+pcr = A/I0*(G*J+pi^2*E*gamma/4/L^2);
 

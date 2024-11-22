@@ -20,24 +20,28 @@ ro=1;	% Material density [kg/m3]
 xi_s = t_f * b^2/(2*(b * t_f + (t_w*h/6))); % Shear center [m]
 G=E/(2*(1+v));	    % Shear modulus [N/m2]
 I=(b * t_f * h^2 * 0.5) + (h^3 * t_w / 12);		% Moment of inertia about x-axis [m4]
-Iyy = 2 * t_f*b^3/3;     % Moment of inertia about y-axis [m4]
+xc = t_f*b^2/(t_w*h+t_f*b*2); %x-position of the centroid
+xs = xc+xi_s;
+
+Iyy = t_w*h*xc^2 + t_f*b^3/6 + 2*t_f*b*(b/2-xc)^2;     % Moment of inertia about y-axis [m4]
 J=2*b*t_f^3 / 3 + h*t_w^3 / 3;		% Torsional constant [m4]
 EI=E*I;		% Bending stiffness [Nm2]
 GJ=G*J;		% Torsional stiffness [Nm2]
-I0=1;	% Polar moment of inertia [m4]
 A=2*b*t_f + h*t_w;	% Cross-section area [m2]
+I0 = I+Iyy+A*xs^2;	% Polar moment of inertia [m4]
 J0=I0*ro;	% Mass moment of inertia [kgm]
+
 
 % Loads and masses
 m=A*ro;	% mass per unit length of elements [kg/m]
 q=0;           % Distributed load [N/m]
 qt=0;		% Distributed torque [Nm/m]
-S=100;           % Concentrated load at end of beam [N]
-T=S*xi_s;		% Beam end torque [Nm]
-P=0;		% Buckling load [N]
+S=-100*0;           % Concentrated load at end of beam [N]
+T=0; %S*xi_s*0;		% Beam end torque [Nm]
+P=-1;		% Buckling load [N]
 
 % Element input data
-nelem=2;		% number of elements
+nelem=100;		% number of elements
 le=L/nelem;		% length of elements for even distribution
 ndof=3*(nelem+1);	% number of degrees of freedom
 nnode=nelem+1;		% number of nodes
@@ -109,25 +113,25 @@ disp(work)
 warping(xi_s, T, G, J, h, b)
 
 L = 0.5;
-pcr = pi^2*E*min(I,Iyy)/L^2;
+pcr = pi^2*E*min(I,Iyy)/L^2/4;
 disp("L = 500mm")
 disp("Euler:")
 disp(pcr)
 disp("Torsionnal")
-disp(torsion_buckling(I, Iyy, G,J,E,L ,b, h, t_f, t_w, xi_s))
+disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
 
 L = 1;
-pcr = pi^2*E*min(I,Iyy)/L^2;
+pcr = pi^2*E*min(I,Iyy)/L^2/4;
 disp("L=1000mm")
 disp("Euler:")
 disp(pcr)
 disp("Torsionnal")
-disp(torsion_buckling(I, Iyy, G,J,E,L ,b, h, t_f, t_w, xi_s))
+disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
 
 L = 2;
-pcr = pi^2*E*min(I,Iyy)/L^2;
+pcr = pi^2*E*min(I,Iyy)/L^2/4;
 disp("L=2000mm")
 disp("Euler")
 disp(pcr)
 disp("Torsionnal")
-disp(torsion_buckling(I, Iyy, G,J,E,L ,b, h, t_f, t_w, xi_s))
+disp(torsion_buckling(I0, G,J,E,L ,b, h, t_f, t_w, xi_s))
