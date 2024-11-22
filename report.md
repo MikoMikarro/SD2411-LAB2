@@ -1,7 +1,7 @@
 1. Complete the following table:
-                Horizontal displ. u(L)      Vertical displ. v(L)    Twist,, ϕ(L)
-MatLab  
-ANSYS/ABAQUS
+                Horizontal displ. u(L)      Vertical displ. v(L)    Twist ϕ(L)
+MatLab          
+ANSYS/ABAQUS    0.51032E-006                -4.5552                 -0.88578E-001
 Analytical
 
 2. 
