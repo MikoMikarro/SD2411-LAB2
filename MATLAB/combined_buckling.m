@@ -3,9 +3,9 @@ function [] = combined_buckling(E, Ixx, Iyy, I0, GJ,L ,b, h, tf, tw, xi, A, xs)
 gamma = tw*xi^2*h^3/12 + tf*h^2/2*(xi^2*b-xi*b^2+b^3/3);
 
 
-Pxx = pi^2*E*Ixx/4/L^2;
+Pxx = pi^2*E*Ixx/4/L^2
 Pyy = pi^2*E*Iyy/4/L^2;
-Prot =  A/I0*(GJ+pi^2*E*gamma/4/L^2);
+Prot =  A/I0*(GJ+pi^2*E*gamma/L^2);
 
 
 

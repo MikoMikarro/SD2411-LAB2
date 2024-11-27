@@ -1,3 +1,5 @@
+# LAB 2: Cantilever with thin-walled cross-section
+
 $$I_{xx} = 2 B t_f \left(\frac{h}{2}\right)^2 + \frac{h^3t_w}{12} = \frac{bt_fh^2}{2} + \frac{t_w h^3}{12}$$
 $$I_{yy} = 2\frac{t_fb^3}{3}$$
 $$I_{xy} = 0$$
@@ -7,8 +9,8 @@ $$J = \sum \frac{st^3}{3} = 2\frac{b t_f^3}{3}+\frac{ht_w^3}{3}$$
 ### Shear center
 	Rotation over 0
 
-$$-S_y \xi_s=2\int^{b}_{0} -\frac{S_y}{I_xx}\frac{t_f h}{2}s ds = \frac{2S_y}{I_{xx}}\frac{t_fh}{2}\frac{b^2}{2}$$
-$$\xi_s = \frac{t_f h b^2}{h^2(bt_f + \frac{t_wh}{6})}$$
+$$-S_y \xi_s=2\int^{b}_{0} -\frac{S_y}{I_xx}\frac{t_f h}{2}s * \frac{h}{2} ds = \frac{2S_y}{I_{xx}}\frac{t_f h^2}{2}\frac{b^2}{2}$$
+$$\xi_s = \frac{t_f b^2}{2(bt_f + \frac{t_wh}{6})}$$
 $$M_z = -\xi_s S_y; \qquad \qquad M_y = 0; \qquad \qquad M_x=P(L-z)$$
 
 ### Distortions
@@ -31,5 +33,19 @@ $$\theta(L) = \frac{-P\xi_s L}{GJ}$$
 ### Shear flow
 $$q_{0\rightarrow 1} = \frac{P}{I_{xx}} \int^{s1}_{0} t_f \frac{h}{2}ds1 = \frac{P}{I_{xx}}\frac{t_h}{2}s$$
 $$q_{1\rightarrow 2} = \frac{P}{I_{xx}} \int^{s}_{0} t_f \frac{h}{2}ds2 = \frac{P}{I_{xx}}(t_w(\frac{h s_{2}}{2} - \frac{s_2^2}{2}) + \frac{t_h b}{2})$$
+
+### Results
+#### Analytical
+$$I_{xx} = 1.26e-7$$
+$$I_{yy} = 1.6e-6$$
+$$\xi_s = 0.0086 $$
+$$v(L) =-0.0038 $$
+$$u(L) = 0$$
+$$\theta(L) = 0.0838$$
+
+#### Matlab
+$$v(L) = -3.7793$$
+$$\theta(L) = 0.083781$$
+
 
 
