@@ -18,7 +18,7 @@ $$
 \begin{vmatrix}
 0 & 0 & P - P_{cr,x} & -P x_s \\
 P - P_{cr,y} & 0 & 0 & P y_s \\
-P y_s & -P x_s & \frac{I_{os}}{A} (P - P_{cr,\theta}) & 0 \\
+P y_s & -P x_s & \frac{I_{0s}}{A} (P - P_{cr,\theta}) & 0 \\
 \end{vmatrix} = 0
 $$
 Note: The roots are always more important that $P_{cr,y}$ as the determinant has been reduced for computation. It means that the first buckling mode is "normal" buckling and not combined. But for comprehension I have shown the first mode of combined buckling on the results.
