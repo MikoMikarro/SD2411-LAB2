@@ -53,3 +53,17 @@ Complete the following table:
 | Pcr3 (mode)    |   49742.85 |    12435.71 |     5440.62 |
 | Pcr4 (mode)    |   87049.91 |    21762.48 |     8635.96 |
 | Pcr5 (mode)    |  138175.39 |    34543.84 |    10475.43 |
+
+| Pcr [N]        | L = 500 mm | L = 1000 mm | L = 2000 mm |
+| -------------- | ---------- | ----------- | ----------- |
+| **FEM**        |            |             |             |
+| Pcr1 (mode)    | BENDING    | BENDING     | BENDING     |
+| Pcr2 (mode)    |  TORSION*  | COMBINED    | BENDING     |
+| Pcr3 (mode)    |  LOCAL     | BENDING*    |  COMBINED   |
+| Pcr4 (mode)    |   LOCAL    | BENDING     | BENDING*    |
+| Pcr5 (mode)    |   LOCAL    | TORSION     | COMBINED    |
+| Pcr6 (mode)    |  LOCAL     |    LOCAL    | LOCAL*      |
+| Pcr7 (mode)    |   LOCAL    |    LOCAL    | TORSION*    |
+| Pcr8 (mode)    |   LOCAL    |    LOCAL    | TORSION     |
+| Pcr9 (mode)    |   LOCAL    |    LOCAL    | BENDING     |
+| Pcr10 (mode)   |   LOCAL    |    LOCAL    | BENDING     |
