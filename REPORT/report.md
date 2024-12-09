@@ -64,26 +64,3 @@ ____
 | Pcr8 (mode)    |   LOCAL    |    LOCAL    | TORSION     |
 | Pcr9 (mode)    |   LOCAL    |    LOCAL    | BENDING     |
 | Pcr10 (mode)   |   LOCAL    |    LOCAL    | BENDING     |
-
-```python
-
-class MYASSA:
-    def __init__(self, )
-```
-> asdasdsad
-
-*italic*
-**bold**
-***italicbold***
-_core_
-
-# HIGLIG
-## h2
-### h3
-![path](https://github.com/MikoMikarro/SD2411-LAB2/blob/main/ANSYS/BUCKLING/images/L1000/L1000_Pcr1.png?raw=true)
-
-```mermaid
-graph TD
-
-A --> B
-```
