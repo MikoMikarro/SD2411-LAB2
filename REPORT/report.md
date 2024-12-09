@@ -8,6 +8,9 @@
 | ANSYS/ABAQUS | 0.51032E-006             | -4.5552                | -0.0837         |
 | Analytical   | 0                        | -3.7793                | -0.0838         |
 
+
+> NOTE!: The displacement in the ansys is greater because on the matlab / analytica the extra displacement due to the twist from the shear center was not taken into account. The real value: $v = -3.7793  +  \xi_s \sin (\phi) = -4.4983$. The use of this displacement would give the correct value
+
 2. Give results for the following codes
 - The total strain energy from the commercial FE code is: `227.51`
 - The work of the applied load in the commercial FE code is: `227.80`
@@ -19,9 +22,15 @@ $$W = \frac{1}{2}  v S_y + \frac{1}{2} \phi M_z$$
 
 3. Plot and print the shear stress distributions requested in task 7 in the lab instructions. Add your analytically calculated shear stress distribution (τ=q/t) to the plot (by hand if you like) and compare the solutions.
 
+> NOTE! The value at the edges is not 0 as ansys gets the maximum shear stress at the surface and this exists due to the existence of torsion.
+
 Everything on the solution folder 3
 
 4. Plot and print the warping and normal stress distributions requested in tasks 8 and 9 in the lab instructions. Add your analytical results and compare the solutions.
+
+> NOTE! The values at the plot of matlab are not accurate as they dont represent the real values for the warping W. You need to take into account that the edge is at an angle at the edge and therefore it would neet to be rotated back
+
+> NOTE! The stress is not linear at the end because the boundary conditions don't allow for correct stress distribution. Also there can be some local beniding on the sides that can create the "noise". At the beginning the stress is really different because the boundary conditions don't allow for free torsion, making the stress due to warping more significant and it is not only normal stress that is taken into account
 
 Everything on the solution folder 4
 
@@ -45,10 +54,10 @@ The critical buckling load for the beam is estimated. Results are derived analyt
 | Pcr5 (mode)    |   21590.25 |    15946.05 |     9918.83 |
 | **MatLab**     |            |             |             |
 | Pcr1 (mode)    |    5526.98 |     1381.74 |      345.44 |
-| Pcr2 (mode)    |   10475.43 |    10475.43 |     3108.93 |
+| Pcr2 (mode)    | 10475.43(T)|  10475.43(T)|     3108.93 |
 | Pcr3 (mode)    |   49742.85 |    12435.71 |     5440.62 |
 | Pcr4 (mode)    |   87049.91 |    21762.48 |     8635.96 |
-| Pcr5 (mode)    |  138175.39 |    34543.84 |    10475.43 |
+| Pcr5 (mode)    |  138175.39 |    34543.84 | 10475.43 (T)|
 ____
 
 | Pcr [N]        | L = 500 mm | L = 1000 mm | L = 2000 mm |
