@@ -27,11 +27,7 @@ Everything on the solution folder 4
 
 # Buckling
 
-The critical buckling load for the beam is estimated. Results are derived analytically, with the 
-commercial FE code and with the MatLab code, which should be modified for this task. For 
-the FE results, examine (at least) the 5 first critical buckling loads and try to distinguish which 
-buckling modes they represent.
-Complete the following table:
+The critical buckling load for the beam is estimated. Results are derived analytically, with the commercial FE code and with the MatLab code, which should be modified for this task. For the FE results, examine (at least) the 5 first critical buckling loads and try to distinguish which buckling modes they represent. Complete the following table:
 
 
 | Pcr [N]        | L = 500 mm | L = 1000 mm | L = 2000 mm |
@@ -53,6 +49,7 @@ Complete the following table:
 | Pcr3 (mode)    |   49742.85 |    12435.71 |     5440.62 |
 | Pcr4 (mode)    |   87049.91 |    21762.48 |     8635.96 |
 | Pcr5 (mode)    |  138175.39 |    34543.84 |    10475.43 |
+____
 
 | Pcr [N]        | L = 500 mm | L = 1000 mm | L = 2000 mm |
 | -------------- | ---------- | ----------- | ----------- |
