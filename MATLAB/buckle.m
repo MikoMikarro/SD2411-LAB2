@@ -67,4 +67,5 @@ ylabel("loads factor")
 xlabel("buckling mode")
 grid on
 
+disp("MATLAB buckling")
 disp(load(1:5))

@@ -13,4 +13,12 @@ plot(s1+b+h/2, -w1(end:-1:1), Color="blue")
 plot(s2+b+h, -w2(end:-1:1), Color="blue")
 xlabel("s")
 ylabel("warping (mm)")
+
+disp("warping at free edge")
+disp(w2(1))
+disp("warping at the corner")
+disp(w2(end))
+disp(w1(1))
+disp("warping on the web at y=0")
+disp(w1(end))
 end

@@ -25,7 +25,7 @@ xs = xc+xi_s;
 
 Iyy = t_w*h*xc^2 + t_f*b^3/6 + 2*t_f*b*(b/2-xc)^2;     % Moment of inertia about y-axis [m4]
 J=2*b*t_f^3 / 3 + h*t_w^3 / 3;		% Torsional constant [m4]
-EI=E*Iyy;		% Bending stiffness [Nm2]
+EI=E*I;		% Bending stiffness [Nm2]
 GJ=G*J;		% Torsional stiffness [Nm2]
 A=2*b*t_f + h*t_w;	% Cross-section area [m2]
 I0 = I+Iyy+A*xs^2;	% Polar moment of inertia [m4]
@@ -36,9 +36,9 @@ J0=I0*ro;	% Mass moment of inertia [kgm]
 m=A*ro;	% mass per unit length of elements [kg/m]
 q=0;           % Distributed load [N/m]
 qt=0;		% Distributed torque [Nm/m]
-S=-100*0;           % Concentrated load at end of beam [N]
-T=0; %S*xi_s*0;		% Beam end torque [Nm]
-P=-1;		% Buckling load [N]
+S=-100;           % Concentrated load at end of beam [N]
+T=S*xi_s;		% Beam end torque [Nm]
+P=0;		% Buckling load [N]
 
 % Element input data
 nelem=30;		% number of elements
